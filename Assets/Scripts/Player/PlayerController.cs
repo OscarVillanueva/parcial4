@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float smoothTime = 0.05f; 
@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ApplyGravity();
-        //ApplyRotation();
         ApplyMovement();
     }
 
@@ -58,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
         input = context.Get<Vector2>();
         movement = speed * Time.deltaTime * new Vector3(input.x, 0, input.y).normalized;
         movement = Camera.main.transform.forward * movement.z + Camera.main.transform.right * movement.x;
+    }
+
+    public void OnInteract()
+    {
+        GameManager.sharedInstance.InitIniteractions();
     }
 
 }
