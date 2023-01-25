@@ -632,8 +632,8 @@ GameObject:
   - component: {fileID: 5953165003107064997}
   - component: {fileID: 5361494828748629701}
   - component: {fileID: 5943701755207665129}
-  - component: {fileID: 6822135498185879549}
   - component: {fileID: 6822135498185879550}
+  - component: {fileID: 4907942938056161301}
   m_Layer: 0
   m_Name: puerta002
   m_TagString: Untagged
@@ -684,7 +684,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -6532154405332333862, guid: 8f0bbfc283e6bf74c89d9f76540e7db1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -706,20 +706,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6822135498185879549
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837366947352029884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 402002399913536366, guid: c02ddc21964f11444a113718d7b53d53, type: 3}
 --- !u!95 &6822135498185879550
 Animator:
   serializedVersion: 4
@@ -740,3 +726,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4907942938056161301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837366947352029884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 0.20000006, z: 5.154494}
+  m_Center: {x: -0.16035843, y: 0.0000000047790536, z: 2.2936633}
