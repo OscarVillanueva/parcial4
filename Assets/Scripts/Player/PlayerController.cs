@@ -64,4 +64,9 @@ public class PlayerController : MonoBehaviour
         GameManager.sharedInstance.InitIniteractions();
     }
 
+    public void OnPause()
+    {
+        print("Me llame");
+        UIManager.sharedInstance.ShowPauseMenu(true);
+    }
 }

@@ -38,6 +38,8 @@ public class TubHandlerController : MonoBehaviour
 
         isAlreadyOpen = true;
         interactIndicator.enabled = false;
+
+        GameManager.sharedInstance.IsFloorClear = false;
         GameManager.OnPlayerInteractions -= RollTub;
     }
 }
