@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class DeskHandleController : MonoBehaviour
 {
+    [Header("Interaction")]
     [SerializeField] private Canvas interactIndicator;
+
+    [Header("Animations")]
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip openClip;
 
     private bool isAlreadyOpen;
 
@@ -35,6 +39,8 @@ public class DeskHandleController : MonoBehaviour
     private void OpenDesk()
     {
         animator.SetBool("isOpened", true);
+
+        SFXManager.sharedInstance.PlayAtPosition(openClip, transform.position);
 
         isAlreadyOpen = true;
         interactIndicator.enabled = false;

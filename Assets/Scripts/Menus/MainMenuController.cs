@@ -11,15 +11,18 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Button startGameBtnContainer;
     [SerializeField] private TMP_Text startGameBtn;
     [SerializeField] private Image curtain;
+    [SerializeField] private AudioClip menuClip;
+    [SerializeField] private AudioClip gameClip;
 
     private void Start()
     {
-        Invoke(nameof(FadeInStartButton), 5);
+        MusicManager.sharedInstance.PlayMusic(menuClip);
+        Invoke(nameof(FadeInStartButton), 7);
     }
 
     private void FadeInStartButton()
     {
-        startGameBtn.DOFade(1, 1)
+        startGameBtn.DOFade(1, 2)
             .OnComplete(() => {
                 startGameBtnContainer.interactable = true;
             });
@@ -29,10 +32,10 @@ public class MainMenuController : MonoBehaviour
     {
         curtain.enabled = true;
         curtain.DOFade(1, 2)
-               .OnStart(() => {
-                   print("Fade out iniciado");
-               })
-               .OnComplete(() => SceneManager.LoadScene("GameScene"));
+               .OnComplete(() => {
+                   MusicManager.sharedInstance.AddToTail(gameClip);
+                   SceneManager.LoadScene("GameScene");
+                });
         
     }
 }

@@ -481,10 +481,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7605fbb0726830b4692a804bf1c0a661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6822135498185879550}
   interactIndicators:
   - {fileID: 6822135497622650420}
   - {fileID: 6822135499634717569}
+  animator: {fileID: 6822135498185879550}
+  openDoorClip: {fileID: 8300000, guid: c3bb26e346ba2d3429db8253a50a15b4, type: 3}
+  closeDoorClip: {fileID: 8300000, guid: 37a8fd6f170014b46a1b1d2a8b63ec40, type: 3}
 --- !u!1 &6822135499383504101
 GameObject:
   m_ObjectHideFlags: 0

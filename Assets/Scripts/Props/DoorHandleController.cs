@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class DoorHandleController : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
+    [Header("Interactions")]
     [SerializeField] private Canvas[] interactIndicators;
+
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip openDoorClip;
+    [SerializeField] private AudioClip closeDoorClip;
+    private bool wasOpen;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,15 +32,23 @@ public class DoorHandleController : MonoBehaviour
 
     private void CloseDoor()
     {
-        animator.SetBool("isOpening", false);
+        if (wasOpen)
+        {
+            wasOpen = false;
+            SFXManager.sharedInstance.PlaySound(closeDoorClip, false);
+            animator.SetBool("isOpening", false);
+        }
+
         ToogleCanvas(false);
         GameManager.OnPlayerInteractions -= OpenDoor;
     }
 
     private void OpenDoor()
     {
+        SFXManager.sharedInstance.PlaySound(openDoorClip, false);
         animator.SetBool("isOpening", true);
         ToogleCanvas(false);
+        wasOpen = true;
     }
 
     private void ToogleCanvas(bool isShowing)

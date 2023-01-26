@@ -6,26 +6,23 @@ public class AmbientController : MonoBehaviour
 {
     [SerializeField] private AudioClip ambientClip;
     [SerializeField] private bool playAtStart = true;
+    [SerializeField] private bool isLooped = false;
 
     private bool alreadyPlay = false;
 
     private void Start()
     {
         if (playAtStart)
-            SFXManager.sharedInstance.PlaySound(ambientClip);
+            SFXManager.sharedInstance.PlaySound(ambientClip, isLooped);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!playAtStart && other.CompareTag("Player") && !alreadyPlay)
         {
-            SFXManager.sharedInstance.PlaySound(ambientClip);
+            SFXManager.sharedInstance.PlaySound(ambientClip, isLooped);
             alreadyPlay = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        alreadyPlay = false;
-    }
 }

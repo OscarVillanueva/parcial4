@@ -544,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactIndicator: {fileID: 623767652}
   animator: {fileID: 8450582684436146869}
+  openClip: {fileID: 8300000, guid: aa233f8635cb30943b1210e186588501, type: 3}
 --- !u!1 &2990643985934430222
 GameObject:
   m_ObjectHideFlags: 0
