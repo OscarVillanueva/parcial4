@@ -9,7 +9,10 @@ public class FallingShelf : MonoBehaviour
 
     private Animator animator;
 
-    // TODO: Regitrastar la funcion de caer en el mager
+    private void Start()
+    {
+        GameManager.OnThingsMoving += Fall;
+    }
 
     private void Awake()
     {
@@ -19,6 +22,7 @@ public class FallingShelf : MonoBehaviour
     private void Fall()
     {
         animator.SetBool("isFalling", true);
+        GameManager.OnThingsMoving -= Fall;
     }
 
     public void PlaySound()

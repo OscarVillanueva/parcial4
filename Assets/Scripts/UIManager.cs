@@ -1,4 +1,4 @@
-using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,6 +49,12 @@ public class UIManager : MonoBehaviour
         controlsCanvas.SetActive(showControls);
 
         isInControls = showControls;
+    }
+
+    public void FinishGame()
+    {
+        fadeCanvas.enabled = true;
+        curtain.DOFade(1, 2).OnComplete(() => SceneManager.LoadScene("FinalScene"));
     }
 
     public void ExitGame()

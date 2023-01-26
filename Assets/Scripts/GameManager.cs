@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public delegate void FloorWasCompleted();
     public static event FloorWasCompleted OnFloorCompleted;
 
-    // TODO: Hacer otro evento para hacer caer las cosas
+    public delegate void ThingsMoving();
+    public static event ThingsMoving OnThingsMoving;
 
     public static GameManager sharedInstance;
 
@@ -45,4 +46,8 @@ public class GameManager : MonoBehaviour
         OnPlayerInteractions?.Invoke();
     }
 
+    public void InitMovingThings()
+    {
+        OnThingsMoving?.Invoke();
+    }
 }

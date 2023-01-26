@@ -8,7 +8,7 @@ public class FallThingsTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // TODO: Decirle al manager que se comiencen a caer las cosas
+            GameManager.sharedInstance.InitMovingThings();
         }
     }
 }

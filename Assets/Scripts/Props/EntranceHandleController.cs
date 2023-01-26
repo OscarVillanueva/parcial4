@@ -47,4 +47,9 @@ public class EntranceHandleController : MonoBehaviour
 
         GameManager.OnPlayerInteractions -= RollEntrance;
     }
+
+    public void FinishGame()
+    {
+        UIManager.sharedInstance.FinishGame();
+    }
 }
