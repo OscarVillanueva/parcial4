@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public delegate void FloorWasCompleted();
     public static event FloorWasCompleted OnFloorCompleted;
 
+    // TODO: Hacer otro evento para hacer caer las cosas
+
     public static GameManager sharedInstance;
 
     private bool isFloorClear;
